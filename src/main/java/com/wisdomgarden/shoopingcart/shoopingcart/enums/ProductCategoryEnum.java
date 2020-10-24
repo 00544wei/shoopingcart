@@ -8,7 +8,7 @@ package com.wisdomgarden.shoopingcart.shoopingcart.enums;
 public enum  ProductCategoryEnum implements IBizEnum {
     ELETRICAL_PRODUCT(1, "电子"),
     FOOD_PRODUCT(2, "食品"),
-    DAILY_NECESSITIES_PRODUCT(3, "生活必需品"),
+    DAILY_NECESSITIES_PRODUCT(3, "日用品"),
     WINE_PRODUCT(4, "酒类"),
     ;
 

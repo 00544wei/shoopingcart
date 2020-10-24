@@ -48,7 +48,7 @@ class CartServiceImplTest {
         DiscountCoupon discountCoupon = null;
 
         List<String> lines = new ArrayList<>();
-        readFile(lines, "classpath:caseA.txt");
+        readFile(lines, "classpath:caseF.txt");
         // 促销信息
         List<String> promotions = lines.subList(0, lines.indexOf(""));
         for (String item : promotions) {

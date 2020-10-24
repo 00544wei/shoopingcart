@@ -48,7 +48,12 @@ public class DefaultCalculatePriceDecorator extends CalculatePriceDecoratorAdapt
                             .collect(Collectors.toList());
                     // 如果选购了该类的商品并且结算时间和优惠时间是同一时间 进行优惠处理,并移除商品信息
                     if (!CollectionUtils.isEmpty(curCategoryCommodities) && isTimeEquals(balanceDate, item.getTime())){
-                        Double curCategoryTotalAmount = curCategoryCommodities.stream().map(p -> Optional.ofNullable(p.getPrice()).orElse(0D))
+                        Double curCategoryTotalAmount = curCategoryCommodities.stream()
+                                .map(p -> {
+                                    Double singlePrice = Optional.ofNullable(p.getPrice()).orElse(0D);
+                                    Integer count = Optional.ofNullable(p.getCount()).orElse(0);
+                                    return DoubleUtils.multiply(singlePrice, Double.valueOf(count));
+                                })
                                 .reduce((a, b) -> DoubleUtils.add(a, b))
                                 .orElse(0D);
                         Double curCategoryDiscountAmount = DoubleUtils.multiply(curCategoryTotalAmount, Double.valueOf(discount));
