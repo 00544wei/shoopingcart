@@ -8,7 +8,7 @@ import com.wisdomgarden.shoopingcart.shoopingcart.service.CartService;
  * @author wei.zhang
  * @date 2020/10/24 12:58
  */
-public interface CalculatePriceDecorator extends CartService {
+public interface CalculatePriceDecorator {
 
     /***
      * description: 就散购物车所有商品的价格

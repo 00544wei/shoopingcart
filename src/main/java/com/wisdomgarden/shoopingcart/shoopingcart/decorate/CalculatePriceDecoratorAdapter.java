@@ -12,9 +12,4 @@ public class CalculatePriceDecoratorAdapter implements CalculatePriceDecorator {
     public void calculatePrice(Cart cart) {
 
     }
-
-    @Override
-    public String getPrice(Cart cart) {
-        return null;
-    }
 }
